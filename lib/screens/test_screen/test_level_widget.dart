@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tighubad/_mock/TestData.dart';
+import 'package:tighubad/screens/test_screen/start_test_screen.dart';
 
 class TestLevelWidget extends StatelessWidget {
-  const TestLevelWidget({
-    super.key,
-    required this.test,
-  });
+  const TestLevelWidget({super.key, required this.test});
 
   final List<Testdata> test;
 
@@ -23,10 +21,7 @@ class TestLevelWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 20,
-                ),
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,7 +49,14 @@ class TestLevelWidget extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => StartTestScreen(),
+                              ),
+                            );
+                          },
                           icon: Icon(
                             Icons.play_arrow_outlined,
                             color: Color(0xff434D65),

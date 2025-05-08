@@ -4,6 +4,7 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String? subTitle;
   final bool isShow;
+  final bool isColumn;
 
   @override
   Size get preferredSize => const Size.fromHeight(56.0);
@@ -12,6 +13,7 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget {
     this.isShow = false,
     required this.title,
     this.subTitle,
+    this.isColumn = false,
     super.key,
   });
 
@@ -35,15 +37,41 @@ class AppbarWidget extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 )
                 : null,
-        title: Text(
-          title,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            fontFamily: "Inter",
-          ),
-        ),
+        title:
+            isColumn
+                ? Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Inter",
+                      ),
+                    ),
+                    Text(
+                      subTitle ?? "",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Inter",
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                )
+                : Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Inter",
+                  ),
+                ),
         actions: <Widget>[
           IconButton(
             onPressed: () {},

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tighubad/_mock/Features.dart';
 import 'package:tighubad/layout/wrapper.dart';
 import 'package:tighubad/widgets/appbar_widget.dart';
-import 'package:tighubad/widgets/features_widger.dart';
-import 'package:tighubad/widgets/world_of_the_day.dart';
+import 'package:tighubad/screens/home/features_widger.dart';
+import 'package:tighubad/screens/home/world_of_the_day.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

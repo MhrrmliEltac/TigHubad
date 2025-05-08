@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tighubad/_mock/TestData.dart';
 import 'package:tighubad/layout/wrapper.dart';
 import 'package:tighubad/widgets/appbar_widget.dart';
-import 'package:tighubad/widgets/instructions_widget.dart';
-import 'package:tighubad/widgets/test_level_widget.dart';
+import 'package:tighubad/screens/test_screen/instructions_widget.dart';
+import 'package:tighubad/screens/test_screen/test_level_widget.dart';
 
 class TestScreen extends StatefulWidget {
   const TestScreen({super.key});
@@ -22,6 +22,7 @@ class _TestScreenState extends State<TestScreen> {
   @override
   Widget build(BuildContext context) {
     return Wrapper(
+      isHome: true,
       appBar: AppbarWidget(title: "Start Test", isShow: true),
       child: Container(
         margin: EdgeInsets.all(24),

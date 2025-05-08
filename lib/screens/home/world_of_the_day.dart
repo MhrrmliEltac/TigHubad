@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tighubad/widgets/means_widget.dart';
-import 'package:tighubad/widgets/rich_text_widget.dart';
+import 'package:tighubad/screens/home/means_widget.dart';
+import 'package:tighubad/screens/home/rich_text_widget.dart';
 
 class WOTD extends StatefulWidget {
   const WOTD({super.key});

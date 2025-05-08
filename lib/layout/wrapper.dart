@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:tighubad/widgets/navigate_home_widget.dart';
 
 class Wrapper extends StatelessWidget {
-  const Wrapper({this.appBar, required this.child, super.key});
+  const Wrapper({
+    this.appBar,
+    required this.child,
+    super.key,
+    this.isHome = false,
+  });
 
   final Widget child;
   final PreferredSizeWidget? appBar;
+  final bool isHome;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +39,7 @@ class Wrapper extends StatelessWidget {
               ),
             ),
             child,
+            if (isHome) NavigateHomeWidget(),
           ],
         ),
       ),

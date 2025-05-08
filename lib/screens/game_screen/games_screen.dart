@@ -13,6 +13,7 @@ class _GamesScreenState extends State<GamesScreen> {
   @override
   Widget build(BuildContext context) {
     return Wrapper(
+      isHome: true,
       appBar: AppbarWidget(title: "Games", isShow: true),
       child: Column(children: []),
     );

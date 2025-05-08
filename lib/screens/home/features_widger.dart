@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tighubad/_mock/Features.dart';
-import 'package:tighubad/screens/dictionary_screen.dart';
-import 'package:tighubad/screens/games_screen.dart';
+import 'package:tighubad/screens/dictionary_screen/dictionary_screen.dart';
+import 'package:tighubad/screens/game_screen/games_screen.dart';
 import 'package:tighubad/screens/speak_screen.dart';
-import 'package:tighubad/screens/test_screen.dart';
+import 'package:tighubad/screens/test_screen/test_screen.dart';
 
 class FeatureGrid extends StatelessWidget {
   final List<Feature> features;

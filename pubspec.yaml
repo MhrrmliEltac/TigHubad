@@ -12,6 +12,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   font_awesome_flutter: ^10.5.0
   flutter_native_splash: ^2.4.6
+  provider: ^6.1.5
+  lottie: 3.3.1
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +31,9 @@ flutter:
     - assets/images/Vector-2.png
     - assets/images/Vector -3.png
     - assets/images/Vector-4.png
+    - assets/images/undraw_winners_re_wr1l 1.png
+    - assets/images/Logo.png
+    - assets/Animation - 1746653407687.json
 
   fonts:
     - family: Inter

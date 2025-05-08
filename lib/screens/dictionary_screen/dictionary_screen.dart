@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tighubad/screens/congratulation_screen.dart';
+import 'package:tighubad/screens/dictionary_screen/search_screen.dart';
 import 'package:tighubad/widgets/appbar_widget.dart';
 
 class DictionaryScreen extends StatefulWidget {
@@ -9,6 +11,8 @@ class DictionaryScreen extends StatefulWidget {
 }
 
 class _DictionaryScreenState extends State<DictionaryScreen> {
+  final TextEditingController _wordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,20 +38,35 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
               alignment: Alignment.center,
               child: Stack(
                 children: [
-                  TextField(
-                    textAlign: TextAlign.center,
-                    decoration: InputDecoration(
-                      hintText: "Search a word",
-                      hintStyle: TextStyle(
-                        color: Color(0xff434D65),
-                        fontSize: 16,
-                        fontFamily: "Inter",
-                        fontWeight: FontWeight.w500,
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: TextField(
+                      textInputAction: TextInputAction.search,
+                      onSubmitted:
+                          (value) => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SearchScreen(),
+                              ),
+                            ),
+                          },
+                      maxLength: 15,
+                      controller: _wordController,
+                      textAlign: TextAlign.center,
+                      decoration: InputDecoration(
+                        hintText: "Search a word",
+                        hintStyle: TextStyle(
+                          color: Color(0xff434D65),
+                          fontSize: 16,
+                          fontFamily: "Inter",
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
                   Positioned(
-                    top: 12,
+                    top: 21,
                     left: 70,
                     child: Icon(
                       Icons.search,
@@ -77,7 +96,17 @@ class _DictionaryScreenState extends State<DictionaryScreen> {
                 borderRadius: BorderRadius.circular(200),
                 color: Colors.white,
               ),
-              child: Icon(Icons.mic_none, color: Color(0xff1D93F3), size: 40),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CongratulationScreen(),
+                    ),
+                  );
+                },
+                child: Icon(Icons.mic_none, color: Color(0xff1D93F3), size: 40),
+              ),
             ),
           ],
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tighubad/layout/wrapper.dart';
-import 'package:tighubad/screens/home_screen.dart';
+import 'package:tighubad/screens/home/home_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
